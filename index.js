@@ -59,9 +59,9 @@ app.get("/about", (req, res) => {
 app.get('/deleteUser/:id', async (req, res) => {
     const id = req.params.id;
 
-    const deleteUser=await User.findByIdAndDelete(id)
+    const deletedUser=await User.findByIdAndDelete(id)
 
-    console.log("deleted user",deleteUser);
+    console.log("deleted user",deletedUser);
     return res.status(200).json({
         message: "User deleted successfully"
     })
